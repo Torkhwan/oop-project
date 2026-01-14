@@ -15,3 +15,15 @@ time_out = hour_out * 60 + minute_out
 total_time = time_out - time_in
 total_hours = total_time // 60
 total_minutes = total_time % 60
+
+if(total_time > 15 and total_minutes > 0):
+    total_hours += 1
+if(total_time <= 15):
+    fee = 0;
+if(total_hours <= 3):
+    fee = total_hours * 10;
+elif(total_hours > 3 and total_hours <= 6):
+    fee = 30 + (total_hours - 3) * 20;
+else:
+    fee = 200;
+print(fee)
